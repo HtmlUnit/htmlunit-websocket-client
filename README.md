@@ -127,10 +127,10 @@ This part is intended for committer who are packaging a release.
     * click Releases > Draft new release
     * fill the tag and title field with the release number (e.g. 4.0.0)
     * append 
-        * htmlunit-xpath-4.x.x.jar
-        * htmlunit-xpath-4.x.x.jar.asc 
-        * htmlunit-xpath-4.x.x-javadoc.jar
-        * htmlunit-xpath-4.x.x-javadoc.jar.asc
+        * htmlunit-websocket-client-4.x.x.jar
+        * htmlunit-websocket-client-4.x.x.jar.asc 
+        * htmlunit-websocket-client-4.x.x-javadoc.jar
+        * htmlunit-websocket-client-4.x.x-javadoc.jar.asc
     * and publish the release 
 
 * Update the version number in pom.xml to start next snapshot development
