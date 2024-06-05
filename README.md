@@ -13,7 +13,7 @@ using different versions of Jetty, this repo provides a shaded version of the je
 
 [HtmlUnit@mastodon][4] | [HtmlUnit@Twitter][3]
 
-### Latest release Version 4.2.0 / May 05, 2024
+### Latest release Version 4.2.0 / June 05, 2024
 
 ### Maven
 
