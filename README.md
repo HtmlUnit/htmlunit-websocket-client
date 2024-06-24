@@ -39,7 +39,8 @@ implementation group: 'org.htmlunit', name: 'htmlunit-websocket-client', version
 The latest builds are available from our
 [Jenkins CI build server][2]
 
-[![Build Status](https://jenkins.wetator.org/buildStatus/icon?job=HtmlUnit+-+XPath)](https://jenkins.wetator.org/job/HtmlUnit%20-%20XPath/)
+htmlunit-websocket-client
+[![Build Status](https://jenkins.wetator.org/buildStatus/icon?job=HtmlUnit+-+websocket+-+client)](https://jenkins.wetator.org/job/HtmlUnit%20-%20Websocket%20Client/)
 
 If you use maven please add:
 
@@ -64,7 +65,7 @@ You have to add the sonatype snapshot repository to your pom `repositories` sect
     </repository>
 
 
-## Start HtmlUnit - XPath Development
+## Start HtmlUnit - Websocket Client Development
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 See deployment for notes on how to deploy the project on a live system.
@@ -123,7 +124,7 @@ This part is intended for committer who are packaging a release.
   - release the package and wait until it is processed
 
 * Create the version on Github
-    * login to Github and open project https://github.com/HtmlUnit/htmlunit-xpath
+    * login to Github and open project https://github.com/HtmlUnit/htmlunit-websocket-client
     * click Releases > Draft new release
     * fill the tag and title field with the release number (e.g. 4.0.0)
     * append 
@@ -150,6 +151,6 @@ This project is licensed under the Apache 2.0 License
 Many thanks to all of you contributing to HtmlUnit/CSSParser/Rhino in the past.
 
 
-[2]: https://jenkins.wetator.org/job/HtmlUnit%20-%20XPath/ "HtmlUnit - XPath CI"
+[2]: https://jenkins.wetator.org/job/HtmlUnit%20-%20Websocket%20Client/ "HtmlUnit - Websocket Client CI"
 [3]: https://twitter.com/HtmlUnit "https://twitter.com/HtmlUnit"
 [4]: https://fosstodon.org/@HtmlUnit
