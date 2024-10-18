@@ -11,9 +11,11 @@ using different versions of Jetty, this repo provides a shaded version of the je
 
 ### Project News
 
+**[Developer Blog][5]**
+
 [HtmlUnit@mastodon][4] | [HtmlUnit@Twitter][3]
 
-### Latest release Version 4.4.0 / July 28, 2024
+### Latest release Version 4.5.0 / October 20, 2024
 
 ### Maven
 
@@ -23,7 +25,7 @@ Add to your `pom.xml`:
 <dependency>
     <groupId>org.htmlunit</groupId>
     <artifactId>htmlunit-websocket-client</artifactId>
-    <version>4.4.0</version>
+    <version>4.5.0</version>
 </dependency>
 ```
 
@@ -32,7 +34,7 @@ Add to your `pom.xml`:
 Add to your `build.gradle`:
 
 ```groovy
-implementation group: 'org.htmlunit', name: 'htmlunit-websocket-client', version: '4.4.0'
+implementation group: 'org.htmlunit', name: 'htmlunit-websocket-client', version: '4.5.0'
 ```
 
 ### Last CI build
@@ -47,7 +49,7 @@ If you use maven please add:
     <dependency>
         <groupId>org.htmlunit</groupId>
         <artifactId>htmlunit-websocket-client</artifactId>
-        <version>4.5.0-SNAPSHOT</version>
+        <version>4.6.0-SNAPSHOT</version>
     </dependency>
 
 You have to add the sonatype snapshot repository to your pom `repositories` section also:
@@ -130,8 +132,12 @@ This part is intended for committer who are packaging a release.
     * append 
         * htmlunit-websocket-client-4.x.x.jar
         * htmlunit-websocket-client-4.x.x.jar.asc 
+        * htmlunit-websocket-client-4.x.x.pom
+        * htmlunit-websocket-client-4.x.x.pom.asc 
         * htmlunit-websocket-client-4.x.x-javadoc.jar
         * htmlunit-websocket-client-4.x.x-javadoc.jar.asc
+        * htmlunit-websocket-client-4.x.x-sources.jar
+        * htmlunit-websocket-client-4.x.x-sources.jar.asc
     * and publish the release 
 
 * Update the version number in pom.xml to start next snapshot development
@@ -154,3 +160,4 @@ Many thanks to all of you contributing to HtmlUnit/CSSParser/Rhino in the past.
 [2]: https://jenkins.wetator.org/job/HtmlUnit%20-%20Websocket%20Client/ "HtmlUnit - Websocket Client CI"
 [3]: https://twitter.com/HtmlUnit "https://twitter.com/HtmlUnit"
 [4]: https://fosstodon.org/@HtmlUnit
+[5]: https://htmlunit.github.io/htmlunit-blog/
