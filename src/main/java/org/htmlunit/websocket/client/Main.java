@@ -21,6 +21,6 @@ package org.htmlunit.websocket.client;
  */
 public class Main {
     public static void main(String[] args) {
-            System.out.println("HtmlUnit WebSocket Client");
-        }
+        System.out.println("HtmlUnit WebSocket Client");
+    }
 }

@@ -5,7 +5,7 @@
 
     <groupId>org.htmlunit</groupId>
     <artifactId>htmlunit-websocket-client</artifactId>
-    <version>4.5.0</version>
+    <version>4.6.0-SNAPSHOT</version>
 
     <name>HtmlUnit WebSocket Client</name>
     <organization>
@@ -156,7 +156,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.10.1</version>
+                <version>3.11.1</version>
                 <configuration>
                     <quiet>true</quiet>
                     <!-- see https://stackoverflow.com/questions/69320220/maven-javadoc-listed-classes-twice -->
