@@ -11,11 +11,11 @@ using different versions of Jetty, this repo provides a shaded version of the je
 
 ### Project News
 
-**[Developer Blog][5]**
+**[Developer Blog](https://htmlunit.github.io/htmlunit-blog/)**
 
-[HtmlUnit@mastodon][4] | [HtmlUnit@Twitter][3]
+[HtmlUnit@mastodon](https://fosstodon.org/@HtmlUnit) | [HtmlUnit@bsky](https://bsky.app/profile/htmlunit.bsky.social) | [HtmlUnit@Twitter](https://twitter.com/HtmlUnit)
 
-### Latest release Version 4.7.0 / November 29, 2024
+### Latest release Version 4.8.0 / January 12, 2024
 
 ### Maven
 
@@ -25,7 +25,7 @@ Add to your `pom.xml`:
 <dependency>
     <groupId>org.htmlunit</groupId>
     <artifactId>htmlunit-websocket-client</artifactId>
-    <version>4.7.0</version>
+    <version>4.8.0</version>
 </dependency>
 ```
 
@@ -34,7 +34,7 @@ Add to your `pom.xml`:
 Add to your `build.gradle`:
 
 ```groovy
-implementation group: 'org.htmlunit', name: 'htmlunit-websocket-client', version: '4.7.0'
+implementation group: 'org.htmlunit', name: 'htmlunit-websocket-client', version: '4.8.0'
 ```
 
 ### Last CI build
@@ -49,7 +49,7 @@ If you use maven please add:
     <dependency>
         <groupId>org.htmlunit</groupId>
         <artifactId>htmlunit-websocket-client</artifactId>
-        <version>4.8.0-SNAPSHOT</version>
+        <version>4.9.0-SNAPSHOT</version>
     </dependency>
 
 You have to add the sonatype snapshot repository to your pom `repositories` section also:
@@ -158,6 +158,3 @@ Many thanks to all of you contributing to HtmlUnit/CSSParser/Rhino in the past.
 
 
 [2]: https://jenkins.wetator.org/job/HtmlUnit%20-%20Websocket%20Client/ "HtmlUnit - Websocket Client CI"
-[3]: https://twitter.com/HtmlUnit "https://twitter.com/HtmlUnit"
-[4]: https://fosstodon.org/@HtmlUnit
-[5]: https://htmlunit.github.io/htmlunit-blog/
