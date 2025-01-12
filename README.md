@@ -15,7 +15,7 @@ using different versions of Jetty, this repo provides a shaded version of the je
 
 [HtmlUnit@mastodon](https://fosstodon.org/@HtmlUnit) | [HtmlUnit@bsky](https://bsky.app/profile/htmlunit.bsky.social) | [HtmlUnit@Twitter](https://twitter.com/HtmlUnit)
 
-### Latest release Version 4.8.0 / January 12, 2024
+### Latest release Version 4.8.0 / January 12, 2025
 
 ### Maven
 
