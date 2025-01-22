@@ -146,7 +146,7 @@ This part is intended for committer who are packaging a release.
 ## Authors
 
 * **RBRi**
-* all the contributors to Xalan
+* all the contributors to the [Jetty project](https://github.com/jetty/jetty.project)
 
 ## License
 
