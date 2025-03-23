@@ -5,7 +5,7 @@
 
     <groupId>org.htmlunit</groupId>
     <artifactId>htmlunit-websocket-client</artifactId>
-    <version>4.10.0</version>
+    <version>4.11.0</version>
 
     <name>HtmlUnit WebSocket Client</name>
     <organization>
