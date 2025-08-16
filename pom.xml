@@ -5,7 +5,7 @@
 
     <groupId>org.htmlunit</groupId>
     <artifactId>htmlunit-websocket-client</artifactId>
-    <version>4.14.0</version>
+    <version>4.15.0</version>
 
     <name>HtmlUnit WebSocket Client</name>
     <organization>
@@ -27,7 +27,7 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
 
-        <jetty.version>9.4.57.v20241219</jetty.version>
+        <jetty.version>9.4.58.v20250814</jetty.version>
 
         <!-- quality -->
         <dependencycheck.version>10.0.4</dependencycheck.version>
