@@ -5,7 +5,7 @@
 
     <groupId>org.htmlunit</groupId>
     <artifactId>htmlunit-websocket-client</artifactId>
-    <version>4.16.0</version>
+    <version>4.17.0</version>
 
     <name>HtmlUnit WebSocket Client</name>
     <organization>
@@ -33,12 +33,12 @@
         <dependencycheck.version>10.0.4</dependencycheck.version>
 
         <!-- plugins -->
-        <central-publishing-plugin.version>0.8.0</central-publishing-plugin.version>
+        <central-publishing-plugin.version>0.9.0</central-publishing-plugin.version>
         <gpg-plugin.version>3.2.8</gpg-plugin.version>
-        <enforcer-plugin.version>3.6.1</enforcer-plugin.version>
+        <enforcer-plugin.version>3.6.2</enforcer-plugin.version>
         <jar-plugin.version>3.4.2</jar-plugin.version>
-        <javadoc-plugin.version>3.11.3</javadoc-plugin.version>
-        <shade-plugin.version>3.6.0</shade-plugin.version>
+        <javadoc-plugin.version>3.12.0</javadoc-plugin.version>
+        <shade-plugin.version>3.6.1</shade-plugin.version>
     </properties>
 
     <dependencies>
