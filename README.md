@@ -5,7 +5,7 @@ This is the code repository of the WebSocket support used by HtmlUnit.
 The default WebSocket client used by HtmlUnit is based on Jetty 9. To avoid conflicts in projects
 using different versions of Jetty, this repo provides a shaded version of the jetty websocket stuff.
 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.htmlunit/htmlunit-websocket-client/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.htmlunit/htmlunit-websocket-client)
+[![Maven Central Version](https://img.shields.io/maven-central/v/org.htmlunit/htmlunit-websocket-client)](https://central.sonatype.com/artifact/org.htmlunit/htmlunit-websocket-client)
 
 :heart: [Sponsor](https://github.com/sponsors/rbri)
 
