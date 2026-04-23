@@ -5,7 +5,7 @@
 
     <groupId>org.htmlunit</groupId>
     <artifactId>htmlunit-websocket-client</artifactId>
-    <version>4.21.0</version>
+    <version>5.0.0-SNAPSHOT</version>
 
     <name>HtmlUnit WebSocket Client</name>
     <organization>
@@ -24,16 +24,19 @@
         <maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
         <additionalparam>-Xdoclint:none</additionalparam>
 
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.release>17</maven.compiler.release>
 
-        <jetty.version>9.4.58.v20250814</jetty.version>
+        <maven.version.ignore>(?i).*-(alpha|beta|m|rc)([\.-]?\d+)?</maven.version.ignore>
+
+        <jetty.version>12.1.6</jetty.version>
 
         <!-- quality -->
         <dependencycheck.version>10.0.4</dependencycheck.version>
 
         <!-- plugins -->
-        <central-publishing-plugin.version>0.9.0</central-publishing-plugin.version>
+        <central-publishing-plugin.version>0.10.0</central-publishing-plugin.version>
         <gpg-plugin.version>3.2.8</gpg-plugin.version>
         <enforcer-plugin.version>3.6.2</enforcer-plugin.version>
         <jar-plugin.version>3.5.0</jar-plugin.version>
@@ -45,7 +48,7 @@
     <dependencies>
         <dependency>
             <groupId>org.eclipse.jetty.websocket</groupId>
-            <artifactId>websocket-client</artifactId>
+            <artifactId>jetty-websocket-jetty-client</artifactId>
             <version>${jetty.version}</version>
         </dependency>
     </dependencies>
