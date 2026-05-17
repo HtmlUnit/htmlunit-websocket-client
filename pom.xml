@@ -15,7 +15,7 @@
     <packaging>jar</packaging>
     <description>
         The default WebSocket client used by HtmlUnit.
-        The implementation is based on Jetty 9.
+        The implementation is based on Jetty 12.
     </description>
     <url>https://www.htmlunit.org</url>
 
@@ -24,10 +24,10 @@
         <maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
         <additionalparam>-Xdoclint:none</additionalparam>
 
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
 
-        <jetty.version>9.4.58.v20250814</jetty.version>
+        <jetty.version>12.1.8</jetty.version>
 
         <!-- quality -->
         <dependencycheck.version>10.0.4</dependencycheck.version>
@@ -45,7 +45,7 @@
     <dependencies>
         <dependency>
             <groupId>org.eclipse.jetty.websocket</groupId>
-            <artifactId>websocket-client</artifactId>
+            <artifactId>jetty-websocket-jetty-client</artifactId>
             <version>${jetty.version}</version>
         </dependency>
     </dependencies>
@@ -97,7 +97,7 @@
                                     <version>3.6.3</version>
                                 </requireMavenVersion>
                                 <requireJavaVersion>
-                                    <version>1.8.0</version>
+                                    <version>17</version>
                                 </requireJavaVersion>
                             </rules>
                         </configuration>
