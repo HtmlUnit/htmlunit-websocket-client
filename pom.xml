@@ -5,7 +5,7 @@
 
     <groupId>org.htmlunit</groupId>
     <artifactId>htmlunit-websocket-client</artifactId>
-    <version>5.0.0-SNAPSHOT</version>
+    <version>5.0.0</version>
 
     <name>HtmlUnit WebSocket Client</name>
     <organization>
@@ -15,7 +15,7 @@
     <packaging>jar</packaging>
     <description>
         The default WebSocket client used by HtmlUnit.
-        The implementation is based on Jetty 9.
+        The implementation is based on Jetty 12.
     </description>
     <url>https://www.htmlunit.org</url>
 
@@ -30,7 +30,7 @@
 
         <maven.version.ignore>(?i).*-(alpha|beta|m|rc)([\.-]?\d+)?</maven.version.ignore>
 
-        <jetty.version>12.1.6</jetty.version>
+        <jetty.version>12.1.8</jetty.version>
 
         <!-- quality -->
         <dependencycheck.version>10.0.4</dependencycheck.version>
@@ -38,11 +38,13 @@
         <!-- plugins -->
         <central-publishing-plugin.version>0.10.0</central-publishing-plugin.version>
         <gpg-plugin.version>3.2.8</gpg-plugin.version>
-        <enforcer-plugin.version>3.6.2</enforcer-plugin.version>
+        <enforcer-plugin.version>3.6.3</enforcer-plugin.version>
+        <compiler-plugin.version>3.15.0</compiler-plugin.version>
         <jar-plugin.version>3.5.0</jar-plugin.version>
         <source-plugin.version>3.4.0</source-plugin.version>
         <javadoc-plugin.version>3.12.0</javadoc-plugin.version>
-        <shade-plugin.version>3.6.1</shade-plugin.version>
+        <shade-plugin.version>3.6.2</shade-plugin.version>
+        <moditect-plugin.version>1.3.0.Final</moditect-plugin.version>
     </properties>
 
     <dependencies>
@@ -100,11 +102,28 @@
                                     <version>3.6.3</version>
                                 </requireMavenVersion>
                                 <requireJavaVersion>
-                                    <version>1.8.0</version>
+                                    <version>17</version>
                                 </requireJavaVersion>
                             </rules>
                         </configuration>
-                  </execution>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${compiler-plugin.version}</version>
+                <executions>
+                    <!-- exclude module-info.java from normal compile;
+                         moditect adds it after shading when relocated packages exist -->
+                    <execution>
+                        <id>default-compile</id>
+                        <configuration>
+                            <excludes>
+                                <exclude>module-info.java</exclude>
+                            </excludes>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
@@ -117,6 +136,9 @@
                             <addClasspath>true</addClasspath>
                             <mainClass>org.htmlunit.websocket.client.Main</mainClass>
                         </manifest>
+                        <manifestEntries>
+                            <Multi-Release>true</Multi-Release>
+                        </manifestEntries>
                     </archive>
                 </configuration>
             </plugin>
@@ -133,6 +155,7 @@
                         <configuration>
                             <artifactSet>
                                 <excludes>
+                                    <exclude>org.slf4j:*</exclude>
                                 </excludes>
                             </artifactSet>
                             <filters>
@@ -140,32 +163,70 @@
                                     <artifact>*:*</artifact>
                                     <excludes>
                                         <exclude>about.html</exclude>
-                                      
                                         <exclude>META-INF/*.SF</exclude>
                                         <exclude>META-INF/*.DSA</exclude>
                                         <exclude>META-INF/*.RSA</exclude>
                                         <exclude>META-INF/DEPENDENCIES</exclude>
                                         <exclude>META-INF/NOTICE</exclude>
+                                        <!-- strip module-info from all deps to avoid split package conflict -->
+                                        <exclude>module-info.class</exclude>
+                                        <exclude>META-INF/versions/*/module-info.class</exclude>
                                     </excludes>
                                 </filter>
                             </filters>
-
                             <relocations>
                                 <relocation>
                                     <pattern>org.eclipse.jetty</pattern>
                                     <shadedPattern>org.htmlunit.jetty</shadedPattern>
                                 </relocation>
                             </relocations>
-
                             <transformers>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ApacheLicenseResourceTransformer"></transformer>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ApacheLicenseResourceTransformer"/>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
                             </transformers>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <!-- moditect runs AFTER shade, so org.htmlunit.jetty.* packages
+                     already exist in the shaded jar when module-info is compiled -->
+                <groupId>org.moditect</groupId>
+                <artifactId>moditect-maven-plugin</artifactId>
+                <version>${moditect-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>add-module-info-to-shaded-jar</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>add-module-info</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}</outputDirectory>
+                            <overwriteExistingFiles>true</overwriteExistingFiles>
+                            <jvmVersion>17</jvmVersion>
+                            <module>
+                                <moduleInfoSource>
+                                    module org.htmlunit.websocket.client {
+                                        requires org.slf4j;
 
+                                        uses org.htmlunit.jetty.compression.Compression;
+                                        uses org.htmlunit.jetty.http.HttpFieldPreEncoder;
+                                        uses org.htmlunit.jetty.websocket.api.ExtensionConfig$Parser;
+                                        uses org.htmlunit.jetty.websocket.core.Extension;
+
+                                        exports org.htmlunit.jetty.client;
+                                        exports org.htmlunit.jetty.http;
+                                        exports org.htmlunit.jetty.util.ssl;
+                                        exports org.htmlunit.jetty.websocket.api;
+                                        exports org.htmlunit.jetty.websocket.client;
+                                    }
+                                </moduleInfoSource>
+                            </module>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
@@ -217,7 +278,6 @@
             </plugin>
         </plugins>
     </build>
-
 
     <issueManagement>
         <system>GitHub</system>

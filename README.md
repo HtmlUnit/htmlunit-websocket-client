@@ -15,7 +15,14 @@ using different versions of Jetty, this repo provides a shaded version of the je
 
 [HtmlUnit@mastodon](https://fosstodon.org/@HtmlUnit) | [HtmlUnit@bsky](https://bsky.app/profile/htmlunit.bsky.social) | [HtmlUnit@Twitter](https://twitter.com/HtmlUnit)
 
-### Latest release Version 4.21.0 / December 28, 2025
+#### Version 5
+
+Starting with version 5.0.0, **JDK 17 or higher is required**.  
+If you are still on JDK 8, see [Legacy Support (JDK 8)](#legacy-support-jdk-8) below.
+
+
+### Latest release Version 5.0.0 / May 24, 2026
+
 
 ### Maven
 
@@ -25,7 +32,7 @@ Add to your `pom.xml`:
 <dependency>
     <groupId>org.htmlunit</groupId>
     <artifactId>htmlunit-websocket-client</artifactId>
-    <version>4.21.0</version>
+    <version>5.0.0</version>
 </dependency>
 ```
 
@@ -34,8 +41,23 @@ Add to your `pom.xml`:
 Add to your `build.gradle`:
 
 ```groovy
-implementation group: 'org.htmlunit', name: 'htmlunit-websocket-client', version: '4.21.0'
+implementation group: 'org.htmlunit', name: 'htmlunit-websocket-client', version: '5.0.0'
 ```
+
+
+<a name="legacy-support-jdk-8"></a>
+### Legacy Support (JDK 8)
+
+If you need to continue using **JDK 8**, versions 4.x remain available as-is.
+Ongoing maintenance and fixes for JDK 8 are only available through sponsorship —
+please contact me via email to discuss options. Sponsorship provides:
+
+- Backporting security and bug fixes to the 4.x branch
+- Compatibility maintenance with older Java versions
+- Timely releases for critical issues
+
+Without sponsorship, the 4.x branch will not receive further updates.
+
 
 ### Last CI build
 The latest builds are available from our
@@ -49,7 +71,7 @@ If you use maven please add:
     <dependency>
         <groupId>org.htmlunit</groupId>
         <artifactId>htmlunit-websocket-client</artifactId>
-        <version>4.22.0-SNAPSHOT</version>
+        <version>5.1.0-SNAPSHOT</version>
     </dependency>
 
 You have to add the sonatype-central snapshot repository to your pom `repositories` section also:
@@ -131,14 +153,14 @@ This part is intended for committer who are packaging a release.
     * click Releases > Draft new release
     * fill the tag and title field with the release number (e.g. 4.0.0)
     * append 
-        * htmlunit-websocket-client-4.x.x.jar
-        * htmlunit-websocket-client-4.x.x.jar.asc 
-        * htmlunit-websocket-client-4.x.x.pom
-        * htmlunit-websocket-client-4.x.x.pom.asc 
-        * htmlunit-websocket-client-4.x.x-javadoc.jar
-        * htmlunit-websocket-client-4.x.x-javadoc.jar.asc
-        * htmlunit-websocket-client-4.x.x-sources.jar
-        * htmlunit-websocket-client-4.x.x-sources.jar.asc
+        * htmlunit-websocket-client-5.x.x.jar
+        * htmlunit-websocket-client-5.x.x.jar.asc 
+        * htmlunit-websocket-client-5.x.x.pom
+        * htmlunit-websocket-client-5.x.x.pom.asc 
+        * htmlunit-websocket-client-5.x.x-javadoc.jar
+        * htmlunit-websocket-client-5.x.x-javadoc.jar.asc
+        * htmlunit-websocket-client-5.x.x-sources.jar
+        * htmlunit-websocket-client-5.x.x-sources.jar.asc
     * and publish the release 
 
 * Update the version number in pom.xml to start next snapshot development
