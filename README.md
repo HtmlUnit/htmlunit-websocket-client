@@ -2,7 +2,7 @@
 
 This is the code repository of the WebSocket support used by HtmlUnit.
 
-The default WebSocket client used by HtmlUnit is based on Jetty 9. To avoid conflicts in projects
+The default WebSocket client used by HtmlUnit is based on Jetty 12. To avoid conflicts in projects
 using different versions of Jetty, this repo provides a shaded version of the jetty websocket stuff.
 
 [![Maven Central Version](https://img.shields.io/maven-central/v/org.htmlunit/htmlunit-websocket-client)](https://central.sonatype.com/artifact/org.htmlunit/htmlunit-websocket-client)
@@ -21,7 +21,7 @@ Starting with version 5.0.0, **JDK 17 or higher is required**.
 If you are still on JDK 8, see [Legacy Support (JDK 8)](#legacy-support-jdk-8) below.
 
 
-### Latest release Version 5.2.0 / June 20, 2026
+### Latest release Version 5.3.0 / July 15, 2026
 
 
 ### Maven
@@ -32,7 +32,7 @@ Add to your `pom.xml`:
 <dependency>
     <groupId>org.htmlunit</groupId>
     <artifactId>htmlunit-websocket-client</artifactId>
-    <version>5.2.0</version>
+    <version>5.3.0</version>
 </dependency>
 ```
 
@@ -41,7 +41,7 @@ Add to your `pom.xml`:
 Add to your `build.gradle`:
 
 ```groovy
-implementation group: 'org.htmlunit', name: 'htmlunit-websocket-client', version: '5.2.0'
+implementation group: 'org.htmlunit', name: 'htmlunit-websocket-client', version: '5.3.0'
 ```
 
 
@@ -71,7 +71,7 @@ If you use maven please add:
     <dependency>
         <groupId>org.htmlunit</groupId>
         <artifactId>htmlunit-websocket-client</artifactId>
-        <version>5.3.0-SNAPSHOT</version>
+        <version>5.4.0-SNAPSHOT</version>
     </dependency>
 
 You have to add the sonatype-central snapshot repository to your pom `repositories` section also:
