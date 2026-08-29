@@ -5,7 +5,7 @@
 
     <groupId>org.htmlunit</groupId>
     <artifactId>htmlunit-websocket-client</artifactId>
-    <version>5.4.0</version>
+    <version>5.5.0</version>
 
     <name>HtmlUnit WebSocket Client</name>
     <organization>
@@ -29,6 +29,9 @@
         <maven.compiler.release>17</maven.compiler.release>
 
         <maven.version.ignore>(?i).*-(alpha|beta|m|rc)([\.-]?\d+)?</maven.version.ignore>
+
+        <enforcer.require.maven.version>3.9.0</enforcer.require.maven.version>
+        <enforcer.require.java.version>17</enforcer.require.java.version>
 
         <jetty.version>12.1.12</jetty.version>
 
@@ -99,10 +102,10 @@
                         <configuration>
                             <rules>
                                 <requireMavenVersion>
-                                    <version>3.6.3</version>
+                                    <version>${enforcer.require.maven.version}</version>
                                 </requireMavenVersion>
                                 <requireJavaVersion>
-                                    <version>17</version>
+                                    <version>${enforcer.require.java.version}</version>
                                 </requireJavaVersion>
                             </rules>
                         </configuration>
